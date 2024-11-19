@@ -1,5 +1,3 @@
-/* login.css */
-
 /* Login page container */
 .login-container {
   display: flex;
@@ -7,37 +5,118 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: #f4f6f9;
+  background: linear-gradient(
+    135deg,
+    #4e73df,
+    #1cc88a
+  ); /* Gradient background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Login card */
 .login-card {
   background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+/* Header */
+.login-card h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Subtitle */
+.login-card .login-subtitle {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Input fields */
+.login-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 5px rgba(78, 115, 223, 0.6);
+}
+
+/* Button */
 .login-button {
   width: 100%;
+  padding: 14px;
   background-color: #2575fc;
   color: white;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .login-button:hover {
   background-color: #1b5dbf;
+  transform: scale(1.05);
 }
 
+.login-button:active {
+  transform: scale(0.98); /* Slight button shrink effect */
+}
+
+/* Error message */
 .login-error {
-  margin-top: 15px;
-  color: red;
+  margin-top: 20px;
+  color: #e74a3b;
   font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Add subtle background blur effect */
+.login-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Animation for card */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeIn 0.8s ease-out;
 }

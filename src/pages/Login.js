@@ -17,22 +17,35 @@ const Login = () => {
         email,
         password,
       });
+      console.log("response", response); // Logging the entire response object
 
-      const { data } = response;
-      console.log(data); // Debugging the response
+      const { data } = response; // Extracting the response data
+
+      console.log("response data:", data); // Logging the response data for debugging
 
       if (data.user) {
+        // Successful login logic
         sessionStorage.setItem("authToken", "dummy-token");
-        sessionStorage.setItem("userEmail", data.user.email); // Using the correct key
-        sessionStorage.setItem("userName", data.user.name); // Assuming 'username' is not in the response
+        sessionStorage.setItem("userEmail", data.user.email);
+        sessionStorage.setItem("userName", data.user.name);
 
         console.log("Navigating to /home");
         navigate("/home");
       } else {
-        setError(data.message);
+        // If there's no user, display the error message
+        setError(data.message || "An unknown error occurred.");
       }
     } catch (err) {
-      setError("An error occurred while logging in. Please try again.");
+      // Handling errors if the login request fails
+      if (err.response) {
+        // If there is a response error, display the API's error message
+        setError(
+          err.response.data.message || "An error occurred while logging in."
+        );
+      } else {
+        // Handle network-related errors or unexpected errors
+        setError("An error occurred while logging in. Please try again.");
+      }
     }
   };
 
