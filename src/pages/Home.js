@@ -19,7 +19,7 @@ const Home = () => {
       <Container className="home-container">
         <div className="home-heading">
           <Typography variant="h3" align="center" className="home-title">
-            Welcome to the Job Portal
+            Hi {sessionStorage.userName} ! Welcome to the Job Portal
           </Typography>
           <Typography variant="h6" align="center" className="home-subtitle">
             Your one-stop solution for finding your dream job and exploring top

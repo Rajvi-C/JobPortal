@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../styles/login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const Login = () => {
       if (data.user) {
         sessionStorage.setItem("authToken", "dummy-token");
         sessionStorage.setItem("userEmail", data.user.email); // Using the correct key
-        sessionStorage.setItem("userName", data.user.fullName); // Assuming 'username' is not in the response
+        sessionStorage.setItem("userName", data.user.name); // Assuming 'username' is not in the response
 
         console.log("Navigating to /home");
         navigate("/home");

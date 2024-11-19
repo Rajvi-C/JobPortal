@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import JobListings from "./pages/JobListings";
 import PrivateRoute from "./components/PrivateRoutes"; // Ensure this is correct
 import "./styles/global.css";
+import CompanyShowcase from "./pages/ComapnyShowcase";
 
 const App = () => {
   return (
@@ -26,6 +27,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <JobListings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/company"
+          element={
+            <PrivateRoute>
+              <CompanyShowcase />
             </PrivateRoute>
           }
         />
