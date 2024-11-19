@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -43,13 +44,15 @@ const Home = () => {
                   Browse hundreds of job listings to find the role that fits you
                   best.
                 </Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="home-card-button"
-                >
-                  Browse Jobs
-                </Button>
+                <Link to="/jobListing">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="home-card-button"
+                  >
+                    Browse Jobs
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </Grid>
@@ -62,13 +65,15 @@ const Home = () => {
                 <Typography variant="body1" className="home-card-description">
                   Discover top companies and learn about their work culture.
                 </Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="home-card-button"
-                >
-                  View Companies
-                </Button>
+                <Link to="/company">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="home-card-button"
+                  >
+                    View Companies
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </Grid>
