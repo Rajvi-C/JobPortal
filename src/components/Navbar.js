@@ -31,7 +31,7 @@ const Navbar = () => {
           <Button color="inherit" component={Link} to="/about">
             About
           </Button>
-          <Button color="inherit" component={Link} to="/jobs">
+          <Button color="inherit" component={Link} to="/jobListing">
             Job Listings
           </Button>
           <Button color="inherit" component={Link} to="/companies">

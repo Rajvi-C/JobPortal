@@ -1,0 +1,43 @@
+/* src/pages/JobListings.css */
+.job-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.job-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.job-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.job-card a:hover {
+  text-decoration: underline;
+}
+
+.MuiChip-root {
+  margin: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Additional styling to make the 'Apply Now' button more consistent */
+.MuiButton-root {
+  margin-top: auto;
+}
