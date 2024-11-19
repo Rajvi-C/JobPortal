@@ -1,0 +1,32 @@
+/* navbar.css */
+.navbar {
+  background-color: #2575fc;
+  width: 100%;
+}
+
+.MuiToolbar-root {
+  padding: 0 16px;
+}
+
+.navbar .MuiTypography-root {
+  flex-grow: 1;
+  color: white;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.navbar .MuiButton-root {
+  color: white;
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.navbar .MuiButton-root:hover {
+  background-color: #1b5dbf;
+}
+
+.navbar .MuiContainer-root {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

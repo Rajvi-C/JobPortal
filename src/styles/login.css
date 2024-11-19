@@ -1,0 +1,43 @@
+/* login.css */
+
+/* Login page container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f4f6f9;
+}
+
+/* Login card */
+.login-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #2575fc;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #1b5dbf;
+}
+
+.login-error {
+  margin-top: 15px;
+  color: red;
+  font-size: 14px;
+}

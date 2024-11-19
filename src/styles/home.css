@@ -1,0 +1,95 @@
+.home-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  background-color: #f4f6f9;
+  min-height: 100vh; /* Ensure it takes up the full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: flex-start; /* Align the content to the top */
+  margin: 0;
+}
+
+.home-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px; /* Adjusted for better spacing between title and cards */
+}
+
+.home-subtitle {
+  font-size: 18px;
+  color: #777;
+}
+
+.home-heading {
+  margin-bottom: 20px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 10px; /* Reduced space between cards */
+  width: 100%;
+  justify-items: center;
+  margin-top: 50px; /* Added margin-top to increase space between text and cards */
+}
+
+.home-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 25px;
+  width: 100%; /* Ensure it fills available space */
+  max-width: 320px; /* Limit the max width */
+  transition: transform 0.3s, box-shadow 0.3s ease;
+  align-items: center;
+}
+
+.home-card:hover {
+  transform: translateY(-8px); /* Subtle hover effect */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.home-card-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.home-card-description {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.home-card-button {
+  background-color: #2575fc;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px; /* Rounded button */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.home-card-button:hover {
+  background-color: #1b5dbf;
+}
+
+.home-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 600px; /* Limit the max width */
+  margin-top: 30px; /* Space between cards and image */
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center the image */
+  margin-bottom: 0;
+}
