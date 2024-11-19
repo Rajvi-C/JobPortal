@@ -8,6 +8,8 @@ import JobListings from "./pages/JobListings";
 import PrivateRoute from "./components/PrivateRoutes"; // Ensure this is correct
 import "./styles/global.css";
 import CompanyShowcase from "./pages/ComapnyShowcase";
+import ContactUs from "./pages/ContactUs";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -35,6 +37,22 @@ const App = () => {
           element={
             <PrivateRoute>
               <CompanyShowcase />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <PrivateRoute>
+              <ContactUs />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PrivateRoute>
+              <About />
             </PrivateRoute>
           }
         />

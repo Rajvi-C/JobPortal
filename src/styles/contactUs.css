@@ -1,0 +1,62 @@
+/* Header Section */
+.contact-header {
+  background: linear-gradient(to right, #0056b3, #007bff);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Contact Container */
+.contact-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.8rem;
+  color: #0056d2; /* Deep Blue */
+  margin-bottom: 20px;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .submit-button {
+  background-color: #0056d2; /* Blue */
+  color: white;
+  margin-top: 20px;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.contact-form .submit-button:hover {
+  background-color: #0033a0; /* Slightly darker blue */
+}
+
+/* Contact Information */
+.contact-info {
+  background-color: #f1f1f1; /* Light Gray */
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+/* Typography Adjustments */
+.contact-info strong {
+  color: #0056d2; /* Accent blue for emphasis */
+}
