@@ -1,19 +1,27 @@
-// src/pages/JobListings.js
-import React from "react";
-import jobPosts from "../mockData/jobPosts"; // Importing the mock data
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar"; // Import Navbar component
-import {
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  Button,
-  Chip,
-  Box,
-} from "@mui/material"; // Material-UI components
+import { Container, Grid, Paper, Typography, Button } from "@mui/material"; // Material-UI components
 import "../styles/jobListings.css";
 
 const JobListings = () => {
+  // State to store jobs fetched from the API
+  const [jobs, setJobs] = useState([]);
+
+  // Fetch job posts from the API
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/job/getAll");
+        const data = await response.json();
+        setJobs(data.jobs);
+      } catch (error) {
+        console.error("Error fetching job posts:", error);
+      }
+    };
+
+    fetchJobs();
+  }, []); // Empty dependency array means this runs once when the component mounts
+
   return (
     <div>
       <Navbar /> {/* Include the Navbar here */}
@@ -25,8 +33,8 @@ const JobListings = () => {
           Job Listings
         </Typography>
         <Grid container spacing={3}>
-          {jobPosts.map((job) => (
-            <Grid item xs={12} sm={6} md={4} key={job.id}>
+          {jobs.map((job) => (
+            <Grid item xs={12} sm={6} md={4} key={job._id}>
               <Paper
                 elevation={3}
                 sx={{
@@ -38,41 +46,22 @@ const JobListings = () => {
                 }}
               >
                 <Typography variant="h6" component="h3" gutterBottom>
-                  {job.title}
+                  {job.jobTitle} at {job.companyName}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" paragraph>
                   {job.description}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" paragraph>
-                  <strong>{job.lastUpdated}</strong>
+                  <strong>
+                    Posted Date :{new Date(job.postedAt).toLocaleDateString()}
+                  </strong>
                 </Typography>
                 <Typography variant="body1" color="textPrimary" gutterBottom>
                   <strong>Salary:</strong> {job.salary}
                 </Typography>
 
-                {/* Display skills horizontally */}
-                <Typography variant="body2" color="textSecondary" paragraph>
-                  <strong>Skills Required:</strong>
-                </Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: 1,
-                    marginBottom: 2,
-                  }}
-                >
-                  {job.skillsRequired.map((skill, index) => (
-                    <Chip
-                      key={index}
-                      label={skill}
-                      variant="outlined"
-                      color="primary"
-                      size="small"
-                      sx={{ margin: "2px" }}
-                    />
-                  ))}
-                </Box>
+                {/* Skills (if you have a skills field, you can display them here) */}
+                {/* For now, assuming no skills data in the API response */}
 
                 {/* Apply Now button fixed at the bottom */}
                 <Button
