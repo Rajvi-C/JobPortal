@@ -11,6 +11,7 @@ import CompanyShowcase from "./pages/ComapnyShowcase";
 import ContactUs from "./pages/ContactUs";
 import About from "./pages/About";
 import AdminPage from "./pages/Admin";
+import AddJobPage from "./pages/AddJob";
 
 const App = () => {
   return (
@@ -63,6 +64,14 @@ const App = () => {
           element={
             <PrivateRoute allowedType="admin">
               <AdminPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/addJob"
+          element={
+            <PrivateRoute allowedType="admin">
+              <AddJobPage />
             </PrivateRoute>
           }
         />

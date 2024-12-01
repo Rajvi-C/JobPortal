@@ -1,0 +1,36 @@
+.container {
+  margin-top: 40px;
+}
+
+.card {
+  margin: 20px 0;
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.formField {
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.snackbar {
+  bottom: 20px;
+}
+
+.textField {
+  width: 100%;
+  margin-bottom: 20px;
+}

@@ -14,6 +14,14 @@ const AdminNavbar = () => {
     navigate("/login"); // Redirect to login page
   };
 
+  const handleAddJobsClick = () => {
+    navigate("/admin/addJob");
+  };
+
+  const handleHomeClick = () => {
+    navigate("/admin");
+  };
+
   return (
     <AppBar position="static" className="navbar">
       <Toolbar>
@@ -21,7 +29,12 @@ const AdminNavbar = () => {
           Admin Portal
         </Typography>
 
-        {/* Right-aligned logout button */}
+        <Button color="inherit" onClick={handleHomeClick}>
+          Home
+        </Button>
+        <Button color="inherit" onClick={handleAddJobsClick}>
+          Add Job
+        </Button>
         <Button color="inherit" onClick={handleLogout}>
           Logout
         </Button>
