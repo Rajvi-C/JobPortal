@@ -10,6 +10,7 @@ import "./styles/global.css";
 import CompanyShowcase from "./pages/ComapnyShowcase";
 import ContactUs from "./pages/ContactUs";
 import About from "./pages/About";
+import AdminPage from "./pages/Admin";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Route
           path="/home"
           element={
-            <PrivateRoute>
+            <PrivateRoute allowedType="employee">
               <Home />
             </PrivateRoute>
           }
@@ -28,7 +29,7 @@ const App = () => {
         <Route
           path="/jobListing"
           element={
-            <PrivateRoute>
+            <PrivateRoute allowedType="employee">
               <JobListings />
             </PrivateRoute>
           }
@@ -36,7 +37,7 @@ const App = () => {
         <Route
           path="/company"
           element={
-            <PrivateRoute>
+            <PrivateRoute allowedType="employee">
               <CompanyShowcase />
             </PrivateRoute>
           }
@@ -44,7 +45,7 @@ const App = () => {
         <Route
           path="/contact"
           element={
-            <PrivateRoute>
+            <PrivateRoute allowedType="employee">
               <ContactUs />
             </PrivateRoute>
           }
@@ -52,8 +53,16 @@ const App = () => {
         <Route
           path="/about"
           element={
-            <PrivateRoute>
+            <PrivateRoute allowedType="employee">
               <About />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute allowedType="admin">
+              <AdminPage />
             </PrivateRoute>
           }
         />

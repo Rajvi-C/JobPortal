@@ -1,20 +1,16 @@
-// src/components/Navbar.js
-
 import React from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
-import "../styles/navbar.css"; // Assuming you're styling it similarly
+import "../styles/navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
-    // Clear sessionStorage on logout
-    sessionStorage.removeItem("authToken");
-    sessionStorage.removeItem("userEmail");
-    sessionStorage.removeItem("userName");
-
-    // Redirect to login page after logout
+    dispatch(logout());
     navigate("/login");
   };
 
