@@ -14,7 +14,7 @@ import "../styles/jobListings.css";
 const JobListings = () => {
   const [jobs, setJobs] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true);
   const jobsPerPage = 6;
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const JobListings = () => {
         const response = await fetch("http://localhost:5000/job/getAll");
         const data = await response.json();
         setJobs(data.jobs);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching job posts:", error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       }
     };
 
