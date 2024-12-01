@@ -10,9 +10,12 @@ import {
 } from "@mui/material";
 import Navbar from "../components/Navbar";
 import "../styles/home.css";
-import homeImage from "../images/homeImage.png"; // Make sure the path is correct
+import homeImage from "../images/homeImage.png";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const user = useSelector((state) => state.user);
+
   return (
     <div>
       <Navbar />
@@ -20,7 +23,7 @@ const Home = () => {
       <Container className="home-container">
         <div className="home-heading">
           <Typography variant="h3" align="center" className="home-title">
-            Hi {sessionStorage.userName} ! Welcome to the Job Portal
+            Hi {user ? user.userName : "User"} ! Welcome to the Job Portal
           </Typography>
           <Typography variant="h6" align="center" className="home-subtitle">
             Your one-stop solution for finding your dream job and exploring top
